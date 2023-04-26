@@ -1,9 +1,7 @@
 using System;
 
-class Program
-{
-    static void Main(string[] args)
-    {
+class Program {
+    static void Main(string[] args) {
         Console.Write("What is your grade (percentage? ");
         float grade = int.Parse(Console.ReadLine());
 
