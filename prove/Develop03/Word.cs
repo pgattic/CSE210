@@ -2,33 +2,25 @@
 namespace Develop03 {
     public class Word {
         string _text;
-        bool _hidden;
-
+        bool _hidden = false;
 
         public Word(string text) {
-            this._text = text;
-            this._hidden = false;
+            _text = text;
         }
 
-
         public string getConditionalWord() {
-            if (this._hidden) {
-                string val = "";
-                while (val.Length < this._text.Length) {
-                    val += "_";
-                }
+            /* Returns a ___ the length of the word if it is supposed to be hidden, else the unmodified word */
+            if (_hidden) {
+                string val;
+                for (val = ""; val.Length < _text.Length; val += "_") {} // what the frick
                 return val;
             } else {
-                return this._text;
+                return _text;
             }
         }
 
-        public string getWord() {
-            return _text;
-        }
-
-        public void setHidden(bool val = true) {
-            this._hidden = val;
+        public void setHidden() {
+            _hidden = true;
         }
     }
 }

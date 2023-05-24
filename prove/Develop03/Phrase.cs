@@ -7,7 +7,7 @@ namespace Develop03 {
         List<int> _visibleIndices;
         string _reference;
 
-        public Phrase(string text, string reference) {
+        public Phrase(string reference, string text) {
             /* Initialize property values */
             _reference = reference;
             _phrase = new List<Word>();
@@ -22,6 +22,7 @@ namespace Develop03 {
         }
         
         public string getModifiedPhrase() {
+            /* Returns a string with the verse reference followed by the ConditionalWord of each Word */
             string result = _reference + ":";
             foreach (Word word in _phrase) {
                 result += " " + word.getConditionalWord();
@@ -30,6 +31,7 @@ namespace Develop03 {
         }
 
         public void hideWords(int maxRemoved = 1) {
+            /* Sets hidden the amount of words specified, until they are all hidden. */
             for (int i = 0; i < maxRemoved && _visibleIndices.Count > 0; i++) {
                 int indexIndex = new Random().Next(0, _visibleIndices.Count);
                 int index = _visibleIndices[indexIndex];
