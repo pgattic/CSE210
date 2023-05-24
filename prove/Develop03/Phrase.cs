@@ -29,12 +29,14 @@ namespace Develop03 {
             return result;
         }
 
-        public void hideWords() {
-            int indexIndex = new Random().Next(0, _visibleIndices.Count);
-            int index = _visibleIndices[indexIndex];
-            _phrase[index].setHidden();
-            _visibleIndices.RemoveAt(indexIndex);
-        }
+        public void hideWords(int maxRemoved = 1) {
+            for (int i = 0; i < maxRemoved && _visibleIndices.Count > 0; i++) {
+                int indexIndex = new Random().Next(0, _visibleIndices.Count);
+                int index = _visibleIndices[indexIndex];
+                _phrase[index].setHidden();
+                _visibleIndices.RemoveAt(indexIndex);
+            }
+       }
 
         public int remainingWords() {
             return _visibleIndices.Count;
