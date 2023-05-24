@@ -4,10 +4,10 @@ using System.Collections.Generic;
 namespace Develop03 {
     public class Scriptures {
         string[] references = {
-            "1 Nephi 1:1"
+            "Helaman 5:12"
         };
         string[] scriptures = {
-            "And it came to pass..."
+            "And now, my sons, remember, remember that it is upon the rock of our Redeemer, who is Christ, the Son of God, that ye must build your foundation; that when the devil shall send forth his mighty winds, yea, his shafts in the whirlwind, yea, when all his hail and his mighty cstorm shall beat upon you, it shall have no power over you to drag you down to the gulf of misery and endless wo, because of the rock upon which ye are built, which is a sure foundation, a foundation whereon if men build they cannot fall."
         };
 
         public Scriptures() {}
