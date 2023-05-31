@@ -9,17 +9,10 @@ namespace Develop03 {
         }
 
         public string getConditionalWord() {
-            /* Returns a ___ the length of the word if it is supposed to be hidden, else the unmodified word */
-            if (_hidden) {
-                string val;
-                for (val = ""; val.Length < _text.Length; val += "_") {} // what the frick
-                return val;
-            } else {
-                return _text;
-            }
+            return _hidden ? new string('_', _text.Length) : _text;
         }
 
-        public void setHidden() {
+        public void hide() {
             _hidden = true;
         }
     }

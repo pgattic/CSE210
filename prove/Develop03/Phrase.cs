@@ -35,10 +35,14 @@ namespace Develop03 {
             for (int i = 0; i < maxRemoved && _visibleIndices.Count > 0; i++) {
                 int indexIndex = new Random().Next(0, _visibleIndices.Count);
                 int index = _visibleIndices[indexIndex];
-                _phrase[index].setHidden();
+                _phrase[index].hide();
                 _visibleIndices.RemoveAt(indexIndex);
             }
-       }
+        }
+
+        public int phraseLength() {
+            return _phrase.Count;
+        }
 
         public int remainingWords() {
             return _visibleIndices.Count;
