@@ -1,9 +1,9 @@
 using System;
 
-class Program
-{
-    static void Main(string[] args)
-    {
-        Console.WriteLine("Hello Learning04 World!");
+namespace Learning04 {
+    class Program {
+        static void Main(string[] args) {
+            Console.WriteLine("Hello Learning04 World!");
+        }
     }
 }

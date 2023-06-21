@@ -8,6 +8,7 @@ namespace Develop04 {
             Console.WriteLine("Namaste!");
 
             string choice;
+            Activity activity = null;
 
             do {
                 Console.Write("Gimme your selection\n 1: Breathing\n 2: Listing\n 3: Reflection\n Anything else: quit\n?: ");
@@ -15,31 +16,26 @@ namespace Develop04 {
                 switch (choice) {
                     case "1":
                         Console.Write("How much time? ");
-                        Breathing breathing = new Breathing(int.Parse(Console.ReadLine()));
-                        Console.Clear();
-
-                        breathing.BeginPrep();
-                        breathing.Start();
-                        Console.Clear();
+                        activity = new Breathing(int.Parse(Console.ReadLine()));
                         break;
                     case "2":
                         Console.Write("How much time? ");
-                        Listing listing = new Listing(int.Parse(Console.ReadLine()));
-                        Console.Clear();
-
-                        listing.BeginPrep();
-                        listing.Start();
+                        activity = new Listing(int.Parse(Console.ReadLine()));
                         Console.Clear();
                         break;
                     case "3":
                         Console.Write("How much time? ");
-                        Reflection reflection = new Reflection(int.Parse(Console.ReadLine()));
-                        Console.Clear();
-
-                        reflection.BeginPrep();
-                        reflection.Start();
+                        activity = new Reflection(int.Parse(Console.ReadLine()));
                         Console.Clear();
                         break;
+                }
+                if (activity != null) {
+                    Console.Clear();
+
+                    activity.BeginPrep();
+                    activity.Start();
+                    Console.Clear();
+                    activity = null;
                 }
             } while (new List<string>(){"1", "2", "3"}.Contains(choice));
         }
