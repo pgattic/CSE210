@@ -5,7 +5,6 @@ namespace snake {
         Color _color;
         int _x;
         int _y;
-        int _cellSize = 20;
 
         public MapElement(Color color, int x, int y) {
             _color = color;
@@ -19,16 +18,12 @@ namespace snake {
             return _color;
         }
 
-        public int GetCellSize() {
-            return _cellSize;
-        }
-
         public int GetDrawXPosition() {
-            return _x * _cellSize;
+            return _x * Constants.CellSize;
         }
 
         public int GetDrawYPosition() {
-            return _y * _cellSize;
+            return _y * Constants.CellSize;
         }
 
         public int GetXPosition() {
@@ -37,6 +32,10 @@ namespace snake {
 
         public int GetYPosition() {
             return _y;
+        }
+
+        public bool InBounds() {
+            return _x >= 0 && _y >= 0 && _x < Constants.MapWidth && _y < Constants.MapHeight;
         }
 
         public void SetXPosition(int x) {

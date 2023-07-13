@@ -4,25 +4,19 @@ using Raylib_cs;
 namespace snake {
     static class Program {
         public static void Main() {
-            Raylib.InitWindow(800, 600, "Snake");
+            Raylib.InitWindow(Constants.ScreenWidth, Constants.ScreenHeight, "Snake");
             Raylib.SetTargetFPS(60);
             int frames = 0;
 
-            Snake snake = new Snake(1, 1, Direction.Right, 5, Color.DARKBLUE);
+            PhysicsContainer physics = new PhysicsContainer();
+
 
             while (!Raylib.WindowShouldClose()) {
                 if (frames % 4 == 0) {
-                    snake.Advance();
+                    physics.Step();
                 }
                 frames++;
-                snake.SetDirection();
-                Raylib.BeginDrawing();
-                Raylib.ClearBackground(Color.WHITE);
-
-                Raylib.DrawText("Hello, world!", 12, 12, 20, Color.BLACK);
-                snake.Render();
-
-                Raylib.EndDrawing();
+                physics.Planck();
             }
 
             Raylib.CloseWindow();

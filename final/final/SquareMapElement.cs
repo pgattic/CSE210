@@ -9,7 +9,7 @@ namespace snake {
         }
 
         public override void Render() {
-            Raylib.DrawRectangle(GetDrawXPosition(), GetDrawYPosition(), GetCellSize(), GetCellSize(), GetColor());
+            Raylib.DrawRectangle(GetDrawXPosition(), GetDrawYPosition(), Constants.CellSize, Constants.CellSize, GetColor());
         }
     }
 }
