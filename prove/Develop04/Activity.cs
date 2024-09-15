@@ -43,16 +43,12 @@ namespace Develop04 {
         }
 
         public void BeginPrep() {
-            double timer = 5;
             Console.WriteLine($"You have chosen the {_type} Activity.");
             Console.WriteLine("Get ready...");
-            while (timer > 0) {
-                foreach (char s in _animationString) {
-                    Console.Write(s);
-                    Thread.Sleep(500);
-                    Console.Write("\b");
-                    timer -= 0.5;
-                }
+            for (int i = 0; i < 5*10; i++) {
+                Console.Write(_animationString[i % _animationString.Length]);
+                Thread.Sleep(1000/10);
+                Console.Write("\b");
             }
             Console.Clear();
         }
